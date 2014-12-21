@@ -7,6 +7,7 @@
 _packages=
 _packages="$_packages nginx php5-fpm mediawiki"
 _packages="$_packages php5-gd php5-xcache php-pear"
+_packages="$_packages php5-imagick imagemagick"
 
 sysconf_require_packages $_packages
 

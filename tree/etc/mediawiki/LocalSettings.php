@@ -26,9 +26,11 @@ $wgSitename      = "Geonef";
 ## http://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath       = "";
 $wgScriptExtension  = ".php";
+$wgArticlePath = '/page/$1';
+$wgUsePathInfo = true;
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer           = "http://10.0.3.64";
+$wgServer           = 'http://'.$_SERVER['SERVER_ADDR'];
 
 ## The relative URL path to the skins directory
 $wgStylePath        = "$wgScriptPath/skins";
@@ -71,9 +73,15 @@ $wgMemCachedServers = array();
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
-$wgEnableUploads  = false;
-#$wgUseImageMagick = true;
-#$wgImageMagickConvertCommand = "/usr/bin/convert";
+$wgEnableUploads  = true;
+$wgUseImageMagick = true;
+$wgImageMagickConvertCommand = "/usr/bin/convert";
+$wgAllowCopyUploads = true;
+$wgSVGConverter = 'rsvg';
+
+$wgFileExtensions = array_merge($wgFileExtensions, array('svg', 'doc', 'xls', 'mpp', 'pdf','ppt','xlsx','jpg','tiff','odt','odg','ods','odp','xcf', 'zip'));
+
+$wgAllowTitlesInSVG = true;
 
 # InstantCommons allows wiki to use images from http://commons.wikimedia.org
 $wgUseInstantCommons  = false;
@@ -129,6 +137,9 @@ if (is_file("/etc/mediawiki-extensions/extensions.php")) {
 # that value)
 $wgResourceLoaderMaxQueryLength = -1;
 
+//////////////////////////////////////////////////////////////////////
+// PERMISSIONS
+
 # The following permissions were set based on your choice in the installer
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
@@ -136,3 +147,17 @@ $wgGroupPermissions['*']['edit'] = false;
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+//////////////////////////////////////////////////////////////////////
+// EXTENSIONS
+
+// The following extensions were automatically enabled:
+require_once( "$IP/extensions/ParserFunctions/ParserFunctions.php" );
+require_once( "$IP/extensions/Renameuser/Renameuser.php" );
+require_once( "$IP/extensions/Vector/Vector.php" );
+
+// http://www.mediawiki.org/wiki/Extension:WikiEditor
+require_once( "$IP/extensions/WikiEditor/WikiEditor.php" );
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
+$wgDefaultUserOptions['wikieditor-preview'] = 1;
