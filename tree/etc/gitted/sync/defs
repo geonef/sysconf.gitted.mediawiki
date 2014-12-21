@@ -1,4 +1,3 @@
 # definitions for gitted/sync "actual"  -*- shell-script -*-
 
 GITTED_MYSQL_DATABASE=mediawiki
-# export GITTED_WWW_PATH=/var/lib/tt-rss
