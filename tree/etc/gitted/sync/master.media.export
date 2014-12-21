@@ -1,0 +1,12 @@
+#!/bin/bash
+
+GITTED_MEDIAWIKI_MEDIA_PATH=media
+GITTED_MEDIAWIKI_IMAGES_DIR=/var/lib/mediawiki
+
+[ -r /etc/gitted/sync/defs ] && . /etc/gitted/sync/defs
+
+GITTED_DATA_PATH=$GITTED_MEDIAWIKI_MEDIA_PATH \
+    GITTED_WORKING_TREE=$GITTED_MEDIAWIKI_IMAGES_DIR \
+    GITTED_AUTO_COMMIT=yes \
+    GITTED_AUTO_ADD=yes \
+    /usr/share/gitted/export/git-subtree
