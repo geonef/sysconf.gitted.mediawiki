@@ -30,7 +30,7 @@ $wgArticlePath = '/page/$1';
 $wgUsePathInfo = true;
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer           = 'http://'.$_SERVER['SERVER_ADDR'];
+$wgServer           = 'http://'.(isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : $_SERVER['SERVER_ADDR']);
 
 ## The relative URL path to the skins directory
 $wgStylePath        = "$wgScriptPath/skins";
