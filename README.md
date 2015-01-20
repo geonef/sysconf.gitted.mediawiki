@@ -33,7 +33,7 @@ This profile will import/export:
 
 * MySQL data in the ```mysql/``` directory from/to the MySQL database
   ```mediawiki``` (see
-  [etc/gitted/sync/](sysconf/tree/etc/gitted/sync/) for the
+  [etc/gitted/sync/](tree/etc/gitted/sync/) for the
   responsible scripts)
 
 * SYSCONF files in the ```sysconf/``` directory from/to container
