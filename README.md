@@ -59,12 +59,14 @@ git subtree add -P sysconf/sysconf.gitted.mediawiki git@github.com:geonef/syscon
 echo sysconf.gitted.mediawiki >sysconf/actual/deps
 ```
 
-* Then push it to the container:
+* Commit it, then make or update the container:
 ```
 sysconf/gitted-client register
 sysconf/gitted-client add mw
 git push mw master
 ```
+
+* Enjoy your fresh Mediawiki at : ```http://10.0.3.x/``` :)
 
 
 ## Authors
